@@ -11,10 +11,12 @@ def gen_search_json():
     query = request.args.get("q", '')
     query = utils.process_term(query)
     results = utils.get_results(query.strip())
-    resp = jsonify(results=results[:10])  # top 10 results
+    resp = jsonify(results=results[:])  # top 10 results
+    
     resp.headers['Access-Control-Allow-Origin'] = '*'
     # end_time = time.time()
     # print("Response time : " + str(end_time - start_time))
+
     return resp
 
 
