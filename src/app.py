@@ -20,6 +20,7 @@ def gen_search_json():
     return resp
 
 
+
 @app.route('/home', methods=['GET'])
 def render_html():
     return render_template('index.html')
